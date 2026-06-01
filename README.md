@@ -1,142 +1,99 @@
 # Code Stats - Python 代码统计工具
 
-一个功能强大的交互式代码统计工具，支持30+种编程语言的代码分析、复杂度分析、可视化报告和Git集成�?
-## �?核心特�?
-### 🚀 交互式界�?- **数字键快捷选择**：按1-7快速选择功能
-- **拖拽支持**：可直接拖拽文件夹到输入�?- **中文字符界面**：全中文提示，易于使�?- **无需命令�?*：双击即可运�?
+一个功能强大的交互式代码统计工具，支持30+种编程语言的代码分析、复杂度分析、可视化报告和Git集成。
+
+## ✨ 核心特性
+
+### 🎯 交互式界面
+- **数字键快捷选择**：按1-7快速选择功能
+- **拖拽支持**：可直接拖拽文件夹到输入框
+- **中文界面**：全中文提示，易于使用
+- **无需安装**：双击即可运行
+
 ### 📊 统计功能
-- **快速统�?*：一键查看代码行数统�?- **详细统计**：显示完整的文件详情
-- **复杂度分�?*：圈复杂�?CC)、函�?类计�?- **Git统计**：分支、贡献者、提交历�?- **可视化图�?*：ASCII条形图展示分�?- **报告导出**：JSON/Markdown格式
-- **完整分析**：一次运行包含所有功�?
+- **快速统计**：一键查看代码行数统计
+- **详细统计**：显示完整的文件详情
+- **复杂度分析**：圈复杂度(CC)、函数/类计数
+- **Git统计**：分析提交、贡献者、文件历史
+- **可视化图表**：ASCII图形显示分布
+- **报告导出**：JSON/Markdown格式
+- **完整分析**：一次性运行所有功能
+
 ### 🌐 支持语言
 支持30+种编程语言，包括：
-Python, JavaScript, TypeScript, Java, C/C++, C#, Go, Rust, Ruby, PHP, Swift, Kotlin, Scala, HTML, CSS, SQL, Shell�?
-## 📦 安装使用
+Python, JavaScript, TypeScript, Java, C/C++, C#, Go, Rust, Ruby, PHP, Swift, Kotlin, Scala, HTML, CSS, SQL, Shell等
 
-### 方法 1：双击运行（推荐�?
-1. **运行**
-   ```bash
-   # 双击运行批处理文�?   CodeStats.bat
-   ```
+## 🚀 安装使用
 
-2. **使用**
-   - 程序启动后显示菜�?   - 按数字键选择功能�?-7�?   - 输入要统计的文件夹路�?
-### 方法 2：命令行模式
+### 方法 1：双击运行（推荐）
+```bash
+# 双击运行启动脚本
+CodeStats.bat
+```
+
+### 方法 2：命令行运行
+```bash
+# 基本用法
+python codestats_no_pathlib.py /path/to/project
+
+# 带参数
+python codestats_no_pathlib.py /path/to/project -v -r --complexity
+```
+
+## 📁 项目结构
+```
+Code-Stats---Python-/
+├── codestats_no_pathlib.py   # 主程序（单文件版本）
+├── CodeStats.bat             # 启动脚本
+├── build_scripts/            # 构建脚本
+│   ├── build.bat
+│   ├── build.py
+│   └── BUILD_GUIDE.md
+├── src/code_stats/           # 源代码目录
+│   ├── core/                 # 核心模块
+│   ├── exporters/            # 导出器
+│   └── utils/                # 工具模块
+├── examples/                 # 使用示例
+└── tests/                    # 测试目录
+```
+
+## 📝 使用示例
 
 ```bash
-# 基本统计
-python codestats_no_pathlib.py C:\path\to\project
+# 快速统计当前目录
+python codestats_no_pathlib.py .
 
-# 详细模式
-python codestats_no_pathlib.py C:\path\to\project -v
+# 递归统计并显示详细信息
+python codestats_no_pathlib.py /path/to/project -r -v
+
+# 分析复杂度
+python codestats_no_pathlib.py . --complexity
 
 # 导出报告
-python codestats_no_pathlib.py C:\path\to\project -o report.json
+python codestats_no_pathlib.py . -o report.md
 ```
 
-### 方法 3：开发模�?
-```bash
-# 运行测试脚本
-python test_run.py
-```
+## 🔧 参数说明
 
-## 🎮 使用说明
+| 参数 | 说明 |
+|------|------|
+| `-r`, `--recursive` | 递归扫描子目录 |
+| `-v`, `--verbose` | 显示详细信息 |
+| `--complexity` | 启用复杂度分析 |
+| `--git` | 启用Git统计 |
+| `--visualize` | 显示可视化图表 |
+| `-o <file>` | 导出报告到文件 |
+| `-e <dirs>` | 排除指定目录 |
+| `--lang <langs>` | 只统计指定语言 |
 
-### 交互模式
+## 📄 许可证
 
-运行程序后，会显示主菜单�?
-```
-============================================================
-      Code Stats - 代码统计工具
-============================================================
-
-  请选择功能�?
-    [1] 快速统�?      - 快速扫描并显示基础统计信息
-    [2] 详细统计       - 显示详细信息和文件详�?    [3] 复杂度分�?    - 显示代码圈复杂度分析
-    [4] Git统计        - 显示Git仓库信息
-    [5] 可视化图�?    - 以ASCII图表显示统计结果
-    [6] 导出报告       - 将结果导出为JSON/Markdown
-    [7] 完整分析       - 包含所有高级功�?    [0] 退出程�?      - 退�?
-  请输入选项:
-```
-
-### 功能说明
-
-| 按键 | 功能 | 说明 |
-|------|------|------|
-| `1` | 快速统�?| 基础统计信息 |
-| `2` | 详细统计 | 包含文件详情列表 |
-| `3` | 复杂度分�?| 圈复杂度统计 |
-| `4` | Git统计 | 仓库信息（需要Git仓库�?|
-| `5` | 可视化图�?| ASCII条形�?|
-| `6` | 导出报告 | JSON/Markdown格式 |
-| `7` | 完整分析 | 所有功能一次运�?|
-| `0` | 退�?| 关闭程序 |
-
-## 📁 项目文件
-
-```
-code-stats/
-├── codestats_no_pathlib.py  # 主程序（不使用pathlib�?├── CodeStats.bat           # 启动批处理文�?├── codestats_single.py     # 单文件版本（使用pathlib�?├── src/code_stats/         # 源代码目�?├── test_run.py             # 测试脚本
-├── build.py                # 打包脚本
-├── build.bat               # 构建脚本
-└── README.md               # 项目文档
-```
-
-## 🛠�?打包说明
-
-### 当前状�?
-由于系统环境中存在旧版pathlib包冲突，PyInstaller暂时无法使用�?
-### 解决方案
-
-1. **使用现有脚本**（推荐）
-   - `codestats_no_pathlib.py` 已移除pathlib依赖
-   - 双击 `CodeStats.bat` 即可运行
-   - 需要安装Python 3.8+
-
-2. **手动打包（需要管理员权限�?*
-   ```bash
-   # 需要先以管理员身份删除冲突文件�?   # del D:\Anaconda\Lib\site-packages\pathlib.py
-   # rmdir D:\Anaconda\Lib\site-packages\pathlib-1.0.1.dist-info /s /q
-   
-   # 然后运行打包脚本
-   python build.py
-   ```
-
-## 📊 示例输出
-
-```
-正在分析: C:\Users\Example\Project
-
-============================================================
-代码统计报告 - C:\Users\Example\Project
-============================================================
-
-【总体统计�?  总文件数:        31
-  总代码行�?      2233
-  有效代码行数:    1990
-  注释行数:        96
-  空行�?          147
-  代码占比:        89.12%
-  总文件大�?      52.20 KB
-
-【按语言统计�?------------------------------------------------------------
-语言              文件�?     代码�?       注释�?       占比
-------------------------------------------------------------
-C++             31       1990       96         100.00%
-------------------------------------------------------------
-```
+MIT License
 
 ## 🤝 贡献
 
-欢迎提交Issue和Pull Request�?
-## 📄 许可�?
-MIT License
+欢迎提交Issue和Pull Request！
 
-## 👤 作�?
-Dove228
+## 📧 联系方式
 
-## 🔗 相关链接
-
-- GitHub仓库: https://github.com/Dove228/Code-Stats---Python-
-- 问题反馈: https://github.com/Dove228/Code-Stats---Python-/issues
+项目地址：https://github.com/Dove228/Code-Stats---Python-

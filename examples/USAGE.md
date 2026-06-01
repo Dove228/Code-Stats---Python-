@@ -1,327 +1,261 @@
-# Code Stats 使用指南
+# 使用指南 - Usage Guide
 
-本文档提供Code Stats工具的详细使用说明�?
-## 📚 目录
+## 🚀 快速开始
 
-- [快速开始](#快速开�?
-- [交互模式](#交互模式)
-- [命令行模式](#命令行模�?
-- [功能详解](#功能详解)
-- [使用示例](#使用示例)
-
----
-
-## 快速开�?
-### 方法 1：运行exe（推荐）
-
-1. 双击 `CodeStats.exe`
-2. 选择功能（按数字�?-7�?3. 输入或拖拽文件夹路径
-4. 查看统计结果
-
-### 方法 2：命令行运行
+### 方法1：交互式运行
 
 ```bash
-# 进入项目目录
-cd d:\Project\01
+# 双击运行
+CodeStats.bat
 
-# 运行
-python -m code_stats
+# 或命令行
+python codestats_no_pathlib.py
 ```
 
----
-
-## 交互模式
-
-### 主菜单操作流�?
-```
-1. 运行程序
-   �?2. 显示主菜�?   �?3. 选择功能（按1-7�?   �?4. 输入文件夹路�?   �?5. 可选：排除目录（留空跳过）
-   �?6. 可选：语言过滤（留空统计所有）
-   �?7. 查看结果
-   �?8. 按Enter返回主菜�?```
-
-### 功能选择说明
-
-| 按键 | 功能 | 说明 |
-|------|------|------|
-| `1` | 快速统�?| 基础统计信息 |
-| `2` | 详细统计 | 包含文件详情 |
-| `3` | 复杂度分�?| 圈复杂度统计 |
-| `4` | Git统计 | 仓库信息 |
-| `5` | 可视化图�?| ASCII图表 |
-| `6` | 导出报告 | JSON/CSV/MD |
-| `7` | 完整分析 | 所有功�?|
-| `0` | 退�?| 关闭程序 |
-
-### 输入提示说明
+运行后会显示主菜单：
 
 ```
-📁 请输入要统计的文件夹路径
-   💡 提示：可以直接拖拽文件夹到此�?   �?直接输入路径或拖拽文件夹
+============================================================
+      Code Stats - 代码统计工具
+============================================================
+
+  请选择功能：
+
+    [1] 快速统计       - 快速扫描并显示基础统计信息
+    [2] 详细统计       - 显示详细信息和文件详情
+    [3] 复杂度分析     - 显示代码圈复杂度分析
+    [4] Git统计        - 显示Git仓库信息
+    [5] 可视化图表     - 以ASCII图表显示统计结果
+    [6] 导出报告       - 将结果导出为JSON/Markdown
+    [7] 完整分析       - 包含所有高级功能
+    [0] 退出程序       - 退出
+
+  请输入选项:
 ```
 
----
-
-## 命令行模�?
-### 基本语法
+### 方法2：命令行模式
 
 ```bash
-CodeStats.exe [路径] [选项]
+# 基本用法
+python codestats_no_pathlib.py /path/to/project
+
+# 递归扫描
+python codestats_no_pathlib.py /path/to/project -r
+
+# 详细输出
+python codestats_no_pathlib.py /path/to/project -v
+
+# 组合使用
+python codestats_no_pathlib.py /path/to/project -r -v --complexity --git
 ```
 
-### 常用命令
+## 📊 功能详解
+
+### 1. 快速统计
 
 ```bash
-# 统计当前目录
-CodeStats.exe .
-
-# 统计指定目录
-CodeStats.exe C:\path\to\project
-
-# 详细模式
-CodeStats.exe . -v
-
-# 排除目录
-CodeStats.exe . -e node_modules,__pycache__
-
-# 只统计特定语言
-CodeStats.exe . --lang python,javascript
-
-# 导出报告
-CodeStats.exe . -o report.json
+python codestats_no_pathlib.py /path/to/project -r
 ```
 
-### 选项说明
-
-| 选项 | 说明 |
-|------|------|
-| `路径` | 要统计的目录或文�?|
-| `-v, --verbose` | 显示详细信息 |
-| `-e, --exclude` | 排除的目录（逗号分隔）|
-| `--lang` | 只统计指定语言 |
-| `-o, --output` | 输出文件路径 |
-| `-f, --format` | 输出格式: json/csv/md |
-| `--complexity` | 显示复杂度分�?|
-| `--git` | 显示Git统计 |
-| `--visualize` | 显示可视化图�?|
-
----
-
-## 功能详解
-
-### 1. 快速统�?
-适合快速了解项目概况�?
-**输出内容�?*
-- 总文件数
-- 总行�?代码�?注释�?空行
-- 代码占比
-- 文件总大�?- 按语言统计
-
-**使用场景�?*
-- 快速了解项目规�?- 日常代码统计
+输出示例：
+```
+┌─────────────────────────────────────────────┐
+│          代码统计结果                        │
+├─────────────────────────────────────────────┤
+│ 总文件数:        42                         │
+│ 总代码行数:      8,523                      │
+│ 有效代码行数:    7,128                      │
+│ 注释行数:        834                        │
+│ 空行数:          561                        │
+│ 代码占比:        83.6%                      │
+└─────────────────────────────────────────────┘
+```
 
 ### 2. 详细统计
 
-包含所有基础统计 + 文件详情�?
-**额外输出�?*
-- Top 20 代码文件列表
-- 每个文件的代码行�?
-**使用场景�?*
-- 分析代码分布
-- 找出代码量最大的文件
+```bash
+python codestats_no_pathlib.py /path/to/project -r -v
+```
 
-### 3. 复杂度分�?
-评估代码复杂度和结构�?
-**输出内容�?*
-- 圈复杂度（CC�?- 函数数量
-- 类数�?- 最大复杂度
-- 平均复杂�?
-**复杂度指标说明：**
-- CC 1-10：简单，清晰
-- CC 11-20：中等，需要注�?- CC 21-50：复杂，建议重构
-- CC > 50：难以维�?
-**使用场景�?*
-- 代码审查
-- 重构优先级评�?
+输出包含每个文件的详细信息。
+
+### 3. 复杂度分析
+
+```bash
+python codestats_no_pathlib.py /path/to/project --complexity
+```
+
+输出示例：
+```
+┌─────────────────────────────────────────────┐
+│          复杂度分析结果                      │
+├─────────────────────────────────────────────┤
+│ 文件               CC    函数  类            │
+├─────────────────────────────────────────────┤
+│ main.py           24      8    2           │
+│ utils.py          12      5    1           │
+│ total             36     13    3           │
+└─────────────────────────────────────────────┘
+```
+
 ### 4. Git统计
 
-显示Git仓库相关信息�?
-**输出内容�?*
-- 当前分支
-- 远程仓库地址
-- 贡献者列�?- 每人提交数、添�?删除行数
+```bash
+python codestats_no_pathlib.py /path/to/project --git
+```
 
-**要求�?*
-- 必须在Git仓库目录下运�?
-**使用场景�?*
-- 项目贡献分析
-- 代码历史追踪
+输出示例：
+```
+┌─────────────────────────────────────────────┐
+│          Git仓库统计                        │
+├─────────────────────────────────────────────┤
+│ 当前分支:        main                       │
+│ 远程仓库:        origin                     │
+│ 提交次数:        28                         │
+│ 贡献者:          3                          │
+│ 最近提交:        2024-01-15                │
+└─────────────────────────────────────────────┘
+```
 
-### 5. 可视化图�?
-ASCII图形化展示统计结果�?
-**图表类型�?*
-- 语言分布条形�?- 目录分布条形�?- 百分比显�?
-**使用场景�?*
-- 直观展示项目结构
-- 报告演示
+### 5. 可视化图表
+
+```bash
+python codestats_no_pathlib.py /path/to/project --visualize
+```
+
+输出示例：
+```
+┌─────────────────────────────────────────────┐
+│          语言分布图表                      │
+├─────────────────────────────────────────────┤
+│ Python    ████████████████████  4,234行    │
+│ JavaScript██████████            2,156行    │
+│ HTML      ████                  892行      │
+│ CSS       ██                    423行      │
+└─────────────────────────────────────────────┘
+```
 
 ### 6. 导出报告
 
-将统计结果保存为文件�?
-**支持格式�?*
-- **JSON**：完整数据，程序友好
-- **CSV**：表格数据，Excel可用
-- **Markdown**：美观报告，文档可用
-
-**使用示例�?*
 ```bash
-CodeStats.exe . -o report.json
-CodeStats.exe . -o report.csv
-CodeStats.exe . -o report.md
+# 导出JSON
+python codestats_no_pathlib.py /path/to/project -o report.json
+
+# 导出Markdown
+python codestats_no_pathlib.py /path/to/project -o report.md
+
+# 导出CSV
+python codestats_no_pathlib.py /path/to/project -o report.csv
 ```
 
 ### 7. 完整分析
 
-一次运行包含所有功能�?
-**包含�?*
-- 详细统计
-- 复杂度分�?- Git统计（如果在Git仓库中）
-- 可视化图�?- JSON报告导出
-
-**使用场景�?*
-- 项目全面评估
-- 生成综合报告
-
----
-
-## 使用示例
-
-### 示例 1：日常统�?
-```
-1. 运行 CodeStats.exe
-2. �?1 选择"快速统�?
-3. 输入或拖拽文件夹路径
-4. 查看结果
-5. 按Enter返回�?退�?```
-
-### 示例 2：代码审�?
-```
-1. 运行 CodeStats.exe
-2. �?3 选择"复杂度分�?
-3. 输入项目路径
-4. 重点关注CC > 20的文�?5. 标记需要重构的代码
+```bash
+python codestats_no_pathlib.py /path/to/project --full
 ```
 
-### 示例 3：生成报�?
+一次性运行所有功能并生成完整报告。
+
+## 🔧 参数说明
+
+| 参数 | 简写 | 说明 |
+|------|------|------|
+| `--recursive` | `-r` | 递归扫描子目录 |
+| `--verbose` | `-v` | 显示详细信息 |
+| `--complexity` | | 启用复杂度分析 |
+| `--git` | | 启用Git统计 |
+| `--visualize` | | 显示可视化图表 |
+| `--full` | | 完整分析（所有功能） |
+| `--output <file>` | `-o` | 导出报告到文件 |
+| `--exclude <dirs>` | `-e` | 排除指定目录 |
+| `--lang <langs>` | | 只统计指定语言 |
+| `--help` | `-h` | 显示帮助信息 |
+
+## 📁 目录排除
+
+```bash
+# 排除单个目录
+python codestats_no_pathlib.py . -e node_modules
+
+# 排除多个目录
+python codestats_no_pathlib.py . -e node_modules,dist,build
+
+# 使用逗号分隔
+python codestats_no_pathlib.py . -e "__pycache__,*.pyc"
 ```
-1. 运行 CodeStats.exe
-2. �?6 选择"导出报告"
-3. 输入项目路径
-4. 选择格式�?-JSON, 2-CSV, 3-Markdown�?5. 确认保存路径
-6. 在指定位置查看报告文�?```
 
-### 示例 4：Git项目分析
+## 🌐 语言过滤
 
-```
-1. 进入Git仓库目录
-2. 运行 CodeStats.exe
-3. �?4 选择"Git统计"
-4. 查看贡献者统�?5. 分析团队贡献情况
-```
+```bash
+# 只统计Python文件
+python codestats_no_pathlib.py . --lang python
 
-### 示例 5：完整项目评�?
-```
-1. 运行 CodeStats.exe
-2. �?7 选择"完整分析"
-3. 输入项目路径
-4. 一次性获取所有统计信�?5. 查看综合报告
+# 统计多种语言
+python codestats_no_pathlib.py . --lang python,js,html
+
+# 语言代码参考
+# python, javascript, typescript, java, c, cpp, csharp, go, rust, ruby, php, swift, kotlin, scala, html, css, sql, shell
 ```
 
----
+## 📝 实用技巧
 
-## 技巧和最佳实�?
-### 提高效率
+### 技巧1：拖拽文件夹
 
-1. **记住常用功能**
-   - `1` = 快速统�?   - `6` = 导出报告
-   - `7` = 完整分析
+在交互式模式下，可以直接将文件夹拖拽到命令行窗口，自动填充路径。
 
-2. **使用排除选项**
-   ```
-   排除目录: node_modules,__pycache__,venv,build
-   ```
+### 技巧2：快速统计当前目录
 
-3. **语言过滤**
-   ```
-   语言: python,javascript,html,css
-   ```
+```bash
+python codestats_no_pathlib.py .
+```
 
-### 数据分析
+### 技巧3：批量统计
 
-1. **找重点文�?*
-   - 使用"详细统计"
-   - 关注Top 20文件
+```bash
+# 统计多个目录
+python codestats_no_pathlib.py dir1 dir2 dir3
 
-2. **评估复杂�?*
-   - 使用"复杂度分�?
-   - 优先处理CC > 20的文�?
-3. **团队协作**
-   - 使用"Git统计"
-   - 了解贡献分布
+# 使用通配符
+python codestats_no_pathlib.py src/*
+```
 
-### 报告生成
+### 技巧4：保存报告
 
-1. **Markdown报告**
-   - 用于文档
-   - GitHub READMEs
+```bash
+# 保存到文件
+python codestats_no_pathlib.py . -r -o report.json
 
-2. **CSV报告**
-   - 用于数据分析
-   - Excel进一步处�?
-3. **JSON报告**
-   - 用于程序处理
-   - CI/CD集成
+# 同时显示和保存
+python codestats_no_pathlib.py . -r -v | tee output.txt
+```
 
----
+## 🔍 常见问题
 
-## 故障排除
+### Q: 为什么统计结果不包含某些文件？
 
-### 问题1：程序无响应
+**A:** 工具会自动排除：
+- 二进制文件（.exe, .dll, .zip, .pdf等）
+- 隐藏文件和目录（以.开头）
+- 临时文件和缓存目录
 
-**解决方法�?*
-- 等待扫描完成（大项目需要时间）
-- 检查路径是否正�?- 确保有读取权�?
-### 问题2：统计结果为�?
-**可能原因�?*
-- 路径不存�?- 所有文件都被排�?- 目录为空
+### Q: 如何统计特定类型的文件？
 
-**解决方法�?*
-- 确认路径正确
-- 检查排除设�?- 尝试统计父目�?
-### 问题3：Git统计不可�?
-**原因�?*
-- 不在Git仓库�?- 没有.git目录
+**A:** 使用 `--lang` 参数指定语言：
+```bash
+python codestats_no_pathlib.py . --lang python
+```
 
-**解决方法�?*
-- 进入Git仓库目录
-- 或使用其他统计功�?
-### 问题4：导出失�?
-**可能原因�?*
-- 路径不存�?- 权限不足
-- 磁盘空间不足
+### Q: 如何排除目录？
 
-**解决方法�?*
-- 使用有效的路�?- 以管理员身份运行
-- 清理磁盘空间
+**A:** 使用 `-e` 参数：
+```bash
+python codestats_no_pathlib.py . -e node_modules,__pycache__
+```
 
----
+### Q: 支持哪些语言？
 
-## 更多资源
+**A:** 支持30+种编程语言，包括Python, JavaScript, Java, C/C++, C#, Go, Rust, Ruby, PHP等。
 
-- 完整文档：[README.md](README.md)
-- 项目主页：https://github.com/Dove228/first_try
-- 问题反馈：https://github.com/Dove228/first_try/issues
+## 🔗 项目地址
 
----
-
-*最后更�? 2026-06-01*
+GitHub: https://github.com/Dove228/Code-Stats---Python-
