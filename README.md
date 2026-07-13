@@ -23,6 +23,10 @@
 支持30+种编程语言，包括：
 Python, JavaScript, TypeScript, Java, C/C++, C#, Go, Rust, Ruby, PHP, Swift, Kotlin, Scala, HTML, CSS, SQL, Shell等
 
+## 🖥️ 运行截图
+
+![运行截图](image.png)
+
 ## 🚀 安装使用
 
 ### 方法 1：双击运行（推荐）
