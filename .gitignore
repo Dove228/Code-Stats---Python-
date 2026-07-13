@@ -28,3 +28,4 @@ htmlcov/
 *.report.*
 report.*
 stats.*
+code_stats_*.json
