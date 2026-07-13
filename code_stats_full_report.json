@@ -1,0 +1,235 @@
+{
+  "root_path": "d:\\Project\\01\\sample_project",
+  "total_files": 13,
+  "total_lines": 637,
+  "total_code_lines": 413,
+  "total_comment_lines": 133,
+  "total_blank_lines": 91,
+  "total_file_size": 14376,
+  "code_percentage": 64.83516483516483,
+  "language_stats": {
+    "Markdown": {
+      "files_count": 1,
+      "total_lines": 127,
+      "code_lines": 100,
+      "comment_lines": 0,
+      "blank_lines": 27
+    },
+    "C": {
+      "files_count": 1,
+      "total_lines": 32,
+      "code_lines": 17,
+      "comment_lines": 11,
+      "blank_lines": 4
+    },
+    "C++": {
+      "files_count": 1,
+      "total_lines": 40,
+      "code_lines": 22,
+      "comment_lines": 14,
+      "blank_lines": 4
+    },
+    "C#": {
+      "files_count": 1,
+      "total_lines": 48,
+      "code_lines": 30,
+      "comment_lines": 14,
+      "blank_lines": 4
+    },
+    "CSS": {
+      "files_count": 1,
+      "total_lines": 86,
+      "code_lines": 65,
+      "comment_lines": 8,
+      "blank_lines": 13
+    },
+    "Go": {
+      "files_count": 1,
+      "total_lines": 31,
+      "code_lines": 19,
+      "comment_lines": 6,
+      "blank_lines": 6
+    },
+    "HTML": {
+      "files_count": 1,
+      "total_lines": 46,
+      "code_lines": 42,
+      "comment_lines": 0,
+      "blank_lines": 4
+    },
+    "Java": {
+      "files_count": 1,
+      "total_lines": 44,
+      "code_lines": 19,
+      "comment_lines": 20,
+      "blank_lines": 5
+    },
+    "JavaScript": {
+      "files_count": 1,
+      "total_lines": 46,
+      "code_lines": 19,
+      "comment_lines": 23,
+      "blank_lines": 4
+    },
+    "Python": {
+      "files_count": 1,
+      "total_lines": 26,
+      "code_lines": 15,
+      "comment_lines": 6,
+      "blank_lines": 5
+    },
+    "Rust": {
+      "files_count": 1,
+      "total_lines": 28,
+      "code_lines": 18,
+      "comment_lines": 6,
+      "blank_lines": 4
+    },
+    "SQL": {
+      "files_count": 1,
+      "total_lines": 43,
+      "code_lines": 28,
+      "comment_lines": 8,
+      "blank_lines": 7
+    },
+    "TypeScript": {
+      "files_count": 1,
+      "total_lines": 40,
+      "code_lines": 19,
+      "comment_lines": 17,
+      "blank_lines": 4
+    }
+  },
+  "file_stats": [
+    {
+      "filepath": "d:\\Project\\01\\sample_project\\README.md",
+      "filename": "README.md",
+      "language": "Markdown",
+      "total_lines": 127,
+      "code_lines": 100,
+      "comment_lines": 0,
+      "blank_lines": 27,
+      "file_size": 3946
+    },
+    {
+      "filepath": "d:\\Project\\01\\sample_project\\c\\main.c",
+      "filename": "main.c",
+      "language": "C",
+      "total_lines": 32,
+      "code_lines": 17,
+      "comment_lines": 11,
+      "blank_lines": 4,
+      "file_size": 486
+    },
+    {
+      "filepath": "d:\\Project\\01\\sample_project\\cpp\\main.cpp",
+      "filename": "main.cpp",
+      "language": "C++",
+      "total_lines": 40,
+      "code_lines": 22,
+      "comment_lines": 14,
+      "blank_lines": 4,
+      "file_size": 706
+    },
+    {
+      "filepath": "d:\\Project\\01\\sample_project\\csharp\\Program.cs",
+      "filename": "Program.cs",
+      "language": "C#",
+      "total_lines": 48,
+      "code_lines": 30,
+      "comment_lines": 14,
+      "blank_lines": 4,
+      "file_size": 1036
+    },
+    {
+      "filepath": "d:\\Project\\01\\sample_project\\css\\styles.css",
+      "filename": "styles.css",
+      "language": "CSS",
+      "total_lines": 86,
+      "code_lines": 65,
+      "comment_lines": 8,
+      "blank_lines": 13,
+      "file_size": 1264
+    },
+    {
+      "filepath": "d:\\Project\\01\\sample_project\\go\\main.go",
+      "filename": "main.go",
+      "language": "Go",
+      "total_lines": 31,
+      "code_lines": 19,
+      "comment_lines": 6,
+      "blank_lines": 6,
+      "file_size": 532
+    },
+    {
+      "filepath": "d:\\Project\\01\\sample_project\\html\\index.html",
+      "filename": "index.html",
+      "language": "HTML",
+      "total_lines": 46,
+      "code_lines": 42,
+      "comment_lines": 0,
+      "blank_lines": 4,
+      "file_size": 1198
+    },
+    {
+      "filepath": "d:\\Project\\01\\sample_project\\java\\Calculator.java",
+      "filename": "Calculator.java",
+      "language": "Java",
+      "total_lines": 44,
+      "code_lines": 19,
+      "comment_lines": 20,
+      "blank_lines": 5,
+      "file_size": 953
+    },
+    {
+      "filepath": "d:\\Project\\01\\sample_project\\javascript\\app.js",
+      "filename": "app.js",
+      "language": "JavaScript",
+      "total_lines": 46,
+      "code_lines": 19,
+      "comment_lines": 23,
+      "blank_lines": 4,
+      "file_size": 952
+    },
+    {
+      "filepath": "d:\\Project\\01\\sample_project\\python\\app.py",
+      "filename": "app.py",
+      "language": "Python",
+      "total_lines": 26,
+      "code_lines": 15,
+      "comment_lines": 6,
+      "blank_lines": 5,
+      "file_size": 612
+    },
+    {
+      "filepath": "d:\\Project\\01\\sample_project\\rust\\main.rs",
+      "filename": "main.rs",
+      "language": "Rust",
+      "total_lines": 28,
+      "code_lines": 18,
+      "comment_lines": 6,
+      "blank_lines": 4,
+      "file_size": 551
+    },
+    {
+      "filepath": "d:\\Project\\01\\sample_project\\sql\\schema.sql",
+      "filename": "schema.sql",
+      "language": "SQL",
+      "total_lines": 43,
+      "code_lines": 28,
+      "comment_lines": 8,
+      "blank_lines": 7,
+      "file_size": 1321
+    },
+    {
+      "filepath": "d:\\Project\\01\\sample_project\\typescript\\app.ts",
+      "filename": "app.ts",
+      "language": "TypeScript",
+      "total_lines": 40,
+      "code_lines": 19,
+      "comment_lines": 17,
+      "blank_lines": 4,
+      "file_size": 819
+    }
+  ]
+}
