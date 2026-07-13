@@ -1,0 +1,314 @@
+Metadata-Version: 2.4
+Name: code-stats
+Version: 0.1.0
+Summary: A powerful CLI tool for code statistics
+Author-email: Your Name <your.email@example.com>
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: flake8>=4.0.0; extra == "dev"
+Dynamic: license-file
+
+# Code Stats - Python 代码统计工具
+
+一个功能强大的交互式代码统计工具，支持30+种编程语言的代码分析、复杂度分析、可视化报告和Git集成。
+
+## ✨ 核心特性
+
+### 🚀 交互式界面
+- **数字键快捷选择**：按1-7快速选择功能
+- **拖拽支持**：可直接拖拽文件夹到输入框
+- **中文字符界面**：全中文提示，易于使用
+- **无需命令行**：双击即可运行
+
+### 📊 统计功能
+- **快速统计**：一键查看代码行数统计
+- **详细统计**：显示完整的文件详情
+- **复杂度分析**：圈复杂度(CC)、函数/类计数
+- **Git统计**：分支、贡献者、提交历史
+- **可视化图表**：ASCII条形图展示分布
+- **报告导出**：JSON/CSV/Markdown格式
+- **完整分析**：一次运行包含所有功能
+
+### 🌐 支持语言
+支持30+种编程语言，包括：
+Python, JavaScript, TypeScript, Java, C/C++, C#, Go, Rust, Ruby, PHP, Swift, Kotlin, Scala, HTML, CSS, SQL, Shell等
+
+## 📦 安装使用
+
+### 方法 1：直接使用exe（推荐）
+
+1. **下载或运行打包脚本**
+   ```bash
+   python build.py
+   ```
+
+2. **生成 exe 文件**
+   - 双击运行 `build.bat`
+   - 或运行 `python build.py`
+
+3. **使用**
+   - 直接双击 `CodeStats.exe` 运行
+   - 或在命令行中运行：`CodeStats.exe`
+
+### 方法 2：源代码运行
+
+```bash
+# 安装依赖
+pip install -r requirements.txt
+
+# 运行（交互模式）
+python -m code_stats
+
+# 运行（命令行模式）
+python -m code_stats /path/to/project
+```
+
+## 🎮 使用说明
+
+### 交互模式
+
+运行程序后，会显示主菜单：
+
+```
+╔══════════════════════════════════════════════════════════════╗
+║          Code Stats - 代码统计工具 v1.0                      ║
+╚══════════════════════════════════════════════════════════════╝
+
+  请选择功能：
+
+    [1] 快速统计       - 快速扫描并显示基础统计信息
+    [2] 详细统计       - 显示详细信息和文件详情
+    [3] 复杂度分析     - 显示代码圈复杂度分析
+    [4] Git统计        - 显示Git仓库信息（需在Git仓库中使用）
+    [5] 可视化图表     - 以ASCII图表显示统计结果
+    [6] 导出报告       - 将结果导出为JSON/CSV/Markdown
+    [7] 完整分析       - 包含所有高级功能的完整统计
+    [0] 退出程序       - 退出Code Stats
+
+  请输入选项:
+```
+
+选择功能后，输入要统计的文件夹路径即可。
+
+### 命令行模式
+
+```bash
+# 基本统计
+CodeStats.exe C:\path\to\project
+
+# 详细统计
+CodeStats.exe C:\path\to\project -v
+
+# 排除目录
+CodeStats.exe C:\path\to\project -e node_modules,__pycache__
+
+# 复杂度分析
+CodeStats.exe C:\path\to\project --complexity
+
+# 导出报告
+CodeStats.exe C:\path\to\project -o report.json
+```
+
+## 📖 功能详解
+
+### 1. 快速统计
+- 总文件数、代码行数、注释行数、空行数
+- 快速了解项目规模
+
+### 2. 详细统计
+- 包含快速统计的所有内容
+- 额外显示文件详情列表
+- Top 20 代码文件排名
+
+### 3. 复杂度分析
+- 圈复杂度（Cyclomatic Complexity）
+- 函数和类的数量
+- 最大/平均复杂度
+- 帮助识别复杂代码
+
+### 4. Git统计
+- 当前分支名称
+- 远程仓库地址
+- 贡献者统计
+- 提交历史
+
+### 5. 可视化图表
+- 语言分布条形图
+- 目录分布条形图
+- 代码行数占比
+
+### 6. 导出报告
+支持格式：
+- **JSON**：完整数据，适合程序处理
+- **CSV**：表格数据，适合Excel分析
+- **Markdown**：美观报告，适合文档
+
+### 7. 完整分析
+一次运行包含：
+- 详细统计
+- 复杂度分析
+- Git统计
+- 可视化图表
+- JSON报告导出
+
+## 🔧 配置选项
+
+### 排除目录
+输入统计路径后，可以选择排除特定目录：
+```
+排除目录: node_modules,__pycache__,venv,.git
+```
+
+### 语言过滤
+可以选择只统计特定语言：
+```
+语言: python,javascript
+```
+
+## 📊 统计内容
+
+### 基础统计
+- 总文件数
+- 总行数 / 代码行 / 注释行 / 空行
+- 代码占比
+- 文件总大小
+
+### 按语言统计
+- 各语言文件数量
+- 各语言代码行数
+- 占比分析
+
+### 按目录统计
+- 各子目录代码分布
+- 目录代码行数
+
+### 复杂度分析
+- 圈复杂度(CC)
+- 函数/类数量
+- 最大/平均复杂度
+
+### Git统计
+- 当前分支
+- 远程仓库
+- 贡献者统计
+- 提交历史
+
+## 🛠️ 打包说明
+
+### 打包步骤
+
+1. **自动打包**
+   ```bash
+   # Windows
+   build.bat
+   
+   # 或使用Python脚本
+   python build.py
+   ```
+
+2. **手动打包**
+   ```bash
+   pip install pyinstaller
+   pyinstaller --onefile --console --name CodeStats "src\code_stats\__main__.py"
+   ```
+
+3. **生成文件**
+   - `dist/CodeStats.exe` - 可执行文件
+   - 将其移动到项目根目录即可使用
+
+### 注意事项
+
+- 打包后的exe无需安装Python
+- 可以复制到任何Windows电脑运行
+- 文件大小约20-50MB（取决于系统）
+
+## 📝 示例输出
+
+### 快速统计示例
+```
+正在分析: C:\Users\Example\Project
+
+============================================================
+代码统计报告 - C:\Users\Example\Project
+============================================================
+
+【总体统计】
+  总文件数:        150
+  总代码行数:      12500
+  有效代码行数:    9870
+  注释行数:        1530
+  空行数:          1100
+  代码占比:        78.96%
+  总文件大小:      2.35 MB
+
+【按语言统计】
+------------------------------------------------------------
+语言              文件数      代码行        注释行        占比
+------------------------------------------------------------
+Python          85        5200        850          52.68%
+JavaScript      40        2800        420          28.37%
+TypeScript      15        1200        180          12.16%
+HTML            10        670         0           6.79%
+------------------------------------------------------------
+```
+
+## 🤔 常见问题
+
+### Q: 如何统计多个项目？
+A: 多次运行程序，或在命令行中指定多个路径。
+
+### Q: 支持哪些语言？
+A: 支持30+种常见编程语言，自动识别文件扩展名。
+
+### Q: 如何排除特定文件？
+A: 在交互模式中选择功能后，会提示输入排除目录。
+
+### Q: 导出的报告在哪里？
+A: 默认保存在当前工作目录，可在导出时指定路径。
+
+## 📄 项目结构
+
+```
+code-stats/
+├── src/code_stats/       # 源代码
+│   ├── __main__.py       # 主程序入口
+│   ├── core/             # 核心模块
+│   ├── exporters/        # 导出器
+│   └── utils/            # 工具模块
+├── tests/                # 测试目录
+├── examples/              # 示例
+├── build.py              # 打包脚本
+├── build.bat             # Windows打包脚本
+├── requirements.txt      # 依赖列表
+├── README.md            # 项目文档
+└── LICENSE              # MIT许可证
+```
+
+## 🤝 贡献
+
+欢迎提交Issue和Pull Request！
+
+## 📄 许可证
+
+MIT License - 详见 [LICENSE](LICENSE) 文件
+
+## 👤 作者
+
+Dove228
+
+## 🔗 相关链接
+
+- GitHub仓库: https://github.com/Dove228/first_try
+- 问题反馈: https://github.com/Dove228/first_try/issues

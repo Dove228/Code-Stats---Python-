@@ -12,10 +12,20 @@ Code-Stats---Python-/
 ├── requirements.txt         # 依赖列表
 ├── README.md                # 项目主文档
 ├── PROJECT_STRUCTURE.md     # 项目结构文档
-├── build_scripts/           # 打包脚本目录
-│   ├── build.bat            # 批处理构建脚本
-│   ├── build.py             # Python构建脚本
-│   └── BUILD_GUIDE.md       # 构建指南
+├── sample_project/          # 示例项目（12种编程语言）
+│   ├── python/app.py        # Python示例
+│   ├── javascript/app.js    # JavaScript示例
+│   ├── typescript/app.ts    # TypeScript示例
+│   ├── java/Calculator.java # Java示例
+│   ├── c/main.c             # C语言示例
+│   ├── cpp/main.cpp         # C++示例
+│   ├── go/main.go           # Go示例
+│   ├── rust/main.rs         # Rust示例
+│   ├── csharp/Program.cs    # C#示例
+│   ├── html/index.html      # HTML示例
+│   ├── css/styles.css       # CSS示例
+│   ├── sql/schema.sql       # SQL示例
+│   └── README.md            # 示例项目说明
 ├── examples/                # 使用示例
 │   └── USAGE.md             # 使用说明文档
 ├── src/                     # 源代码目录

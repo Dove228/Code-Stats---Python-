@@ -24,11 +24,6 @@ Thumbs.db
 .coverage
 htmlcov/
 
-# Build artifacts
-dist/
-build/
-*.egg-info/
-
 # Project specific
 *.report.*
 report.*

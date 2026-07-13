@@ -45,14 +45,11 @@ python codestats_no_pathlib.py /path/to/project -v -r --complexity
 Code-Stats---Python-/
 ├── codestats_no_pathlib.py   # 主程序（单文件版本）
 ├── CodeStats.bat             # 启动脚本
-├── build_scripts/            # 构建脚本
-│   ├── build.bat
-│   ├── build.py
-│   └── BUILD_GUIDE.md
 ├── src/code_stats/           # 源代码目录
 │   ├── core/                 # 核心模块
 │   ├── exporters/            # 导出器
 │   └── utils/                # 工具模块
+├── sample_project/           # 示例项目（12种语言）
 ├── examples/                 # 使用示例
 └── tests/                    # 测试目录
 ```

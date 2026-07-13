@@ -1,0 +1,2 @@
+[console_scripts]
+code-stats = code_stats.__main__:main
