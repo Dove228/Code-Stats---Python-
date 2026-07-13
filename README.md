@@ -25,7 +25,7 @@ Python, JavaScript, TypeScript, Java, C/C++, C#, Go, Rust, Ruby, PHP, Swift, Kot
 
 ## 🖥️ 运行截图
 
-![运行截图](image.png)
+![运行截图](assets/screenshot.png)
 
 ## 🚀 安装使用
 
